@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>기점 계산기 · 농작물생산조사</title>
+<title>농작물생산조사 기점 계산기</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 :root{
@@ -114,8 +114,8 @@ button.btn:active{transform:scale(.97);}
 <div class="wrap">
 
   <div class="hdr">
-    <div class="hdr-sub">기점 선정 계산기</div>
-    <div class="hdr-ttl">조사 기점 산출 <span class="hdr-crop-badge" id="hdrCropBadge"></span></div>
+    <div class="hdr-sub">농작물생산조사</div>
+    <div class="hdr-ttl">기점 계산기 <span class="hdr-crop-badge" id="hdrCropBadge"></span></div>
     <span class="hdr-ico">🌾</span>
   </div>
 
@@ -146,34 +146,49 @@ button.btn:active{transform:scale(.97);}
           논벼
         </button>
 
-        <!-- 마늘: garlic bulb -->
+        <!-- 마늘: garlic bulb realistic -->
         <button class="crop-btn" data-crop="마늘" data-mode="이랑" onclick="selectCrop(this)">
-          <div class="crop-ico"><svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="10" y1="1" x2="10" y2="5" stroke="#6BA030" stroke-width="1.3" stroke-linecap="round"/>
-            <path d="M8 5 C7 6 6 8 6 12 C6 16.5 7.5 20 10 20 C12.5 20 14 16.5 14 12 C14 8 13 6 12 5 Z" fill="#F5EFD8" stroke="#C8B068" stroke-width="0.9"/>
-            <path d="M10 5 L10 20" stroke="#C8B068" stroke-width="0.6"/>
-            <path d="M7.2 6.5 C6.5 8.5 6.5 14 7.5 18.5" stroke="#D0C080" stroke-width="0.5" fill="none"/>
-            <path d="M12.8 6.5 C13.5 8.5 13.5 14 12.5 18.5" stroke="#D0C080" stroke-width="0.5" fill="none"/>
-            <path d="M6.5 9 C8 8.2 12 8.2 13.5 9" stroke="#D8C888" stroke-width="0.6" fill="none"/>
-            <path d="M6.2 13 C8 12 12 12 13.8 13" stroke="#D8C888" stroke-width="0.5" fill="none"/>
-            <ellipse cx="10" cy="20.5" rx="4" ry="1.5" fill="#D8C878" opacity="0.5"/>
+          <div class="crop-ico"><svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- stem -->
+            <line x1="13" y1="1" x2="13" y2="6" stroke="#5A9020" stroke-width="1.6" stroke-linecap="round"/>
+            <!-- root base shadow -->
+            <ellipse cx="13" cy="22.5" rx="5.5" ry="1.2" fill="#C8A840" opacity="0.35"/>
+            <!-- outer papery skin - main body -->
+            <path d="M7 11 C6.5 8 8 6 13 6 C18 6 19.5 8 19 11 C18.5 16.5 16.5 22 13 22 C9.5 22 7.5 16.5 7 11Z" fill="#F0EBD0" stroke="#C8A840" stroke-width="1.1"/>
+            <!-- left clove shape inside -->
+            <path d="M9 12 C8.5 10 9.5 7.5 11.5 7 C11 9 10.5 13 11 17 C10 15 9.5 13.5 9 12Z" fill="#E8D898" stroke="#B89830" stroke-width="0.5"/>
+            <!-- right clove shape inside -->
+            <path d="M17 12 C17.5 10 16.5 7.5 14.5 7 C15 9 15.5 13 15 17 C16 15 16.5 13.5 17 12Z" fill="#E8D898" stroke="#B89830" stroke-width="0.5"/>
+            <!-- center line -->
+            <line x1="13" y1="6.5" x2="13" y2="21.5" stroke="#C8A840" stroke-width="0.7" stroke-dasharray="1.5,1.5"/>
+            <!-- horizontal bands -->
+            <path d="M8 13 C10 12.2 16 12.2 18 13" stroke="#D4B860" stroke-width="0.6" fill="none" opacity="0.7"/>
+            <path d="M7.5 17 C9.5 16.2 16.5 16.2 18.5 17" stroke="#D4B860" stroke-width="0.5" fill="none" opacity="0.6"/>
           </svg></div>
           마늘
         </button>
 
-        <!-- 양파: onion with brown skin -->
+        <!-- 양파: onion realistic -->
         <button class="crop-btn" data-crop="양파" data-mode="이랑" onclick="selectCrop(this)">
-          <div class="crop-ico"><svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="10" y1="1" x2="10" y2="5.5" stroke="#6BA030" stroke-width="1.3" stroke-linecap="round"/>
-            <path d="M8 5 C6 5.5 4 8 4 12.5 C4 17 6.5 21 10 21 C13.5 21 16 17 16 12.5 C16 8 14 5.5 12 5 Z" fill="#D4882A" stroke="#A05818" stroke-width="0.9"/>
-            <path d="M6 8 C7.5 7.5 12.5 7.5 14 8" stroke="#C07820" stroke-width="0.6" fill="none"/>
-            <path d="M5 11 C7 10.2 13 10.2 15 11" stroke="#B87020" stroke-width="0.6" fill="none"/>
-            <path d="M5 14.5 C7 13.8 13 13.8 15 14.5" stroke="#B87020" stroke-width="0.5" fill="none"/>
-            <path d="M6 17.5 C7.5 17 12.5 17 14 17.5" stroke="#B87020" stroke-width="0.5" fill="none"/>
-            <path d="M8.5 20.5 C9 20.8 9.5 21 10 21 C10.5 21 11 20.8 11.5 20.5" stroke="#A05818" stroke-width="0.6" fill="none"/>
-            <line x1="9" y1="21" x2="8" y2="23" stroke="#8B6A30" stroke-width="0.7" stroke-linecap="round"/>
-            <line x1="10" y1="21.2" x2="10" y2="23" stroke="#8B6A30" stroke-width="0.7" stroke-linecap="round"/>
-            <line x1="11" y1="21" x2="12" y2="23" stroke="#8B6A30" stroke-width="0.7" stroke-linecap="round"/>
+          <div class="crop-ico"><svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- green shoot -->
+            <path d="M13 5.5 C13 3.5 12.5 2 13 1" stroke="#5A9020" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M11 6 C10 4 9.5 2.5 10.5 1.5" stroke="#5A9020" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            <!-- neck ring -->
+            <ellipse cx="13" cy="6.5" rx="3" ry="1.2" fill="#B86010" stroke="#904010" stroke-width="0.7"/>
+            <!-- main bulb outer -->
+            <path d="M5.5 15 C5.5 9 8.5 6.5 13 6.5 C17.5 6.5 20.5 9 20.5 15 C20.5 20.5 17.5 24 13 24 C8.5 24 5.5 20.5 5.5 15Z" fill="#D07818" stroke="#A05810" stroke-width="1.1"/>
+            <!-- highlight / inner layer lines -->
+            <path d="M8 10 C9.5 9 16.5 9 18 10" stroke="#C86810" stroke-width="0.7" fill="none"/>
+            <path d="M7 13.5 C9 12.5 17 12.5 19 13.5" stroke="#BE6010" stroke-width="0.7" fill="none"/>
+            <path d="M6.5 17.5 C9 16.5 17 16.5 19.5 17.5" stroke="#BE6010" stroke-width="0.6" fill="none"/>
+            <path d="M7.5 21 C9.5 20.2 16.5 20.2 18.5 21" stroke="#BE6010" stroke-width="0.5" fill="none"/>
+            <!-- highlight shine -->
+            <path d="M8.5 9.5 C9 8.5 10 7.5 11.5 7.5" stroke="#E89040" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.7"/>
+            <!-- root tufts -->
+            <line x1="11" y1="24" x2="10.5" y2="26.5" stroke="#8B5A20" stroke-width="0.8" stroke-linecap="round"/>
+            <line x1="13" y1="24.3" x2="13" y2="27" stroke="#8B5A20" stroke-width="0.8" stroke-linecap="round"/>
+            <line x1="15" y1="24" x2="15.5" y2="26.5" stroke="#8B5A20" stroke-width="0.8" stroke-linecap="round"/>
           </svg></div>
           양파
         </button>
@@ -256,15 +271,15 @@ button.btn:active{transform:scale(.97);}
       <div class="rtog-btn"        id="tog2" onclick="selectRatio(2)">② 2번 비율</div>
     </div>
     <div class="ratio-row active" id="rrow1">
-      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" id="r1_ga" value="0."></div>
-      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" id="r1_na" value="0."></div>
-      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" id="r1_da" value="0."></div>
+      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="decimal" id="r1_ga" value="0."></div>
+      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="decimal" id="r1_na" value="0."></div>
+      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="decimal" id="r1_da" value="0."></div>
     </div>
     <div style="height:8px;"></div>
     <div class="ratio-row" id="rrow2">
-      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" id="r2_ga" value="0."></div>
-      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" id="r2_na" value="0."></div>
-      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" id="r2_da" value="0."></div>
+      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="decimal" id="r2_ga" value="0."></div>
+      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="decimal" id="r2_na" value="0."></div>
+      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="decimal" id="r2_da" value="0."></div>
     </div>
   </div>
 
@@ -280,19 +295,19 @@ button.btn:active{transform:scale(.97);}
     </div>
     <div class="fg">
       <label id="lenLabel">가-나 총길이 (cm)</label>
-      <input type="number" id="lenGaNa" oninput="updateHalf()" placeholder="숫자 입력">
+      <input type="number" inputmode="decimal" id="lenGaNa" oninput="updateHalf()" placeholder="숫자 입력">
       <div class="hint">추출간격 ÷ 2 = <span class="hint-v" id="halfVal">0</span> <span id="halfUnit">cm</span></div>
     </div>
     <div class="ab-grid">
       <div class="ab-group a-grp">
         <div class="ab-label a-lbl"><span class="ab-badge a">A</span>A 포구</div>
-        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" id="heightA" placeholder="A 세로"></div>
-        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" id="waAvg" placeholder="평균값"></div>
+        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" inputmode="decimal" id="heightA" placeholder="A 세로"></div>
+        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" inputmode="decimal" id="waAvg" placeholder="평균값"></div>
       </div>
       <div class="ab-group b-grp">
         <div class="ab-label b-lbl"><span class="ab-badge b">B</span>B 포구</div>
-        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" id="heightB" placeholder="B 세로"></div>
-        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" id="wbAvg" placeholder="평균값"></div>
+        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" inputmode="decimal" id="heightB" placeholder="B 세로"></div>
+        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" inputmode="decimal" id="wbAvg" placeholder="평균값"></div>
       </div>
     </div>
   </div>
@@ -327,8 +342,9 @@ button.btn:active{transform:scale(.97);}
       </div>
 
       <!-- B 결과 -->
-      <div class="res-card">
+      <div class="res-card" id="bResCard">
         <div class="res-hdr b"><span class="ab-badge b">B</span>B 포구 산출 결과</div>
+        <div id="bPendingNote" style="display:none;padding:8px 14px 0;font-size:11px;color:var(--a600);background:var(--a50);border-bottom:.5px solid var(--a400);">⚠ B포구 세로 총길이를 입력하면 전체 결과가 계산됩니다.</div>
         <div class="res-rows">
           <div class="res-row"><span class="res-lbl">가로 기점</span><div class="res-right"><span id="outB_ga" class="res-main">-</span><span id="outB_ga_raw" class="res-sub"></span></div></div>
           <div class="res-row"><span class="res-lbl">세로 기점</span><div class="res-right"><span id="outB_se" class="res-main">-</span><span id="outB_se_raw" class="res-sub"></span></div></div>
@@ -414,12 +430,17 @@ function calculate(){
   const ga=parseFloat(document.getElementById('r'+sel+'_ga').value);
   const na=parseFloat(document.getElementById('r'+sel+'_na').value);
   const da=parseFloat(document.getElementById('r'+sel+'_da').value);
-  if(isNaN(L)||isNaN(Ha)||isNaN(Hb)||isNaN(ga)||isNaN(na)||isNaN(da)){alert('비율과 모든 조사값을 입력해주세요.');return;}
 
+  // A포구 필수값 체크 (L, Ha, ga, na 필수 / Hb·da는 B포구 있을 때만)
+  if(isNaN(L)||isNaN(Ha)||isNaN(ga)||isNaN(na)){
+    alert('비율(가·나)과 가-나 총길이, A 세로 총길이를 입력해주세요.');return;
+  }
+
+  const hasB = !isNaN(Hb) && !isNaN(da);
   const gaUnit=measureMode==='이랑'?'이랑':'cm';
   const lLbl=measureMode==='이랑'?'총이랑수':'총길이(cm)';
 
-  // 캡처 헤더 (항상 표시)
+  // 캡처 헤더
   document.getElementById('captureInfo').innerHTML=
     (selectedCrop?'<strong>작물: '+selectedCrop+'</strong> &nbsp;·&nbsp; ':'')+
     '주소: '+(addr||'미입력')+' &nbsp;·&nbsp; 조사일: '+dateTxt;
@@ -428,29 +449,51 @@ function calculate(){
     '<strong>입력 데이터 요약</strong><br>'+
     '선택 비율: '+sel+'번 &nbsp;|&nbsp; 1번: 가('+r1ga+') 나('+r1na+') 다('+r1da+')'+
     ' &nbsp;|&nbsp; 2번: 가('+r2ga+') 나('+r2na+') 다('+r2da+')<br>'+
-    lLbl+': '+L+' &nbsp;|&nbsp; A세로: '+Ha+'cm &nbsp;|&nbsp; B세로: '+Hb+'cm'+
-    ' &nbsp;|&nbsp; 평균너비 A:'+(waA||0)+' B:'+(wbA||0);
+    lLbl+': '+L+' &nbsp;|&nbsp; A세로: '+Ha+'cm'+
+    (hasB?' &nbsp;|&nbsp; B세로: '+Hb+'cm':' &nbsp;|&nbsp; B세로: <em>미입력</em>')+
+    ' &nbsp;|&nbsp; 평균너비 A:'+(isNaN(waA)?'-':waA)+(hasB?' B:'+(isNaN(wbA)?'-':wbA):'');
 
   const a_ga=L*ga, b_ga=a_ga+L/2;
-  const a_se=Ha*na, b_se=Hb*da;
+  const a_se=Ha*na;
 
+  // A 결과 항상 표시
   setRes('outA_ga','outA_ga_raw',a_ga,gaUnit);
   setRes('outA_se','outA_se_raw',a_se,'cm');
-  setRes('outB_ga','outB_ga_raw',b_ga,gaUnit);
-  setRes('outB_se','outB_se_raw',b_se,'cm');
+  if(!isNaN(waA)&&waA>0) setRes('outLenA','outLenA_raw',30000/waA,'cm');
 
   document.getElementById('alertBox').style.display=Math.round(a_ga)===0?'block':'none';
-  if(waA>0)setRes('outLenA','outLenA_raw',30000/waA,'cm');
-  if(wbA>0)setRes('outLenB','outLenB_raw',30000/wbA,'cm');
 
-  drawDiagram(ga,na,da,a_ga,b_ga,a_se,b_se,gaUnit);
+  // B 결과 - 입력된 경우만 표시, 아니면 '미입력' 안내
+  const bCard=document.getElementById('bResCard');
+  if(hasB){
+    const b_se=Hb*da;
+    setRes('outB_ga','outB_ga_raw',b_ga,gaUnit);
+    setRes('outB_se','outB_se_raw',b_se,'cm');
+    if(!isNaN(wbA)&&wbA>0) setRes('outLenB','outLenB_raw',30000/wbA,'cm');
+    bCard.style.opacity='1';
+    bCard.style.border='.5px solid var(--gr100)';
+    document.getElementById('bPendingNote').style.display='none';
+  } else {
+    // B 미입력 상태: 가로기점은 계산값 표시, 세로·이랑길이는 대기
+    setRes('outB_ga','outB_ga_raw',b_ga,gaUnit);
+    document.getElementById('outB_se').textContent='—';
+    document.getElementById('outB_se_raw').textContent='B 세로 미입력';
+    document.getElementById('outLenB').textContent='—';
+    document.getElementById('outLenB_raw').textContent='평균너비 미입력';
+    bCard.style.opacity='0.6';
+    bCard.style.border='.5px dashed var(--gr200)';
+    document.getElementById('bPendingNote').style.display='block';
+  }
+
+  const b_se = hasB ? Hb*da : null;
+  drawDiagram(ga,na,da,a_ga,b_ga,a_se,b_se,gaUnit,hasB);
 
   const rb=document.getElementById('resultBox');
   rb.style.display='flex';rb.style.flexDirection='column';rb.style.gap='11px';
   setTimeout(()=>window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}),50);
 }
 
-function drawDiagram(ga,na,da,a_ga,b_ga,a_se,b_se,gaUnit){
+function drawDiagram(ga,na,da,a_ga,b_ga,a_se,b_se,gaUnit,hasB){
   const NS='http://www.w3.org/2000/svg';
   const svg=document.getElementById('fieldSvg');
   svg.innerHTML='';
@@ -466,7 +509,7 @@ function drawDiagram(ga,na,da,a_ga,b_ga,a_se,b_se,gaUnit){
   const gaF=Math.min(Math.max(ga,0.05),0.92);
   const bF =Math.min(Math.max(ga+0.5,0.08),0.97);
   const naF=Math.min(Math.max(na,0.05),0.92);
-  const daF=Math.min(Math.max(da,0.05),0.92);
+  const daF=hasB?Math.min(Math.max(da,0.05),0.92):0.5; // default mid if no B
   const axA=FX+FW*gaF, axB=FX+FW*bF;
   const ayA=bot-FH*naF, ayB=bot-FH*daF;
 
@@ -475,28 +518,28 @@ function drawDiagram(ga,na,da,a_ga,b_ga,a_se,b_se,gaUnit){
   for(let i=1;i<7;i++){const ly=FY+(FH/7)*i;svg.appendChild(el('line',{x1:FX+2,y1:ly,x2:rgt-2,y2:ly,stroke:'#C0DD97','stroke-width':'0.6','stroke-dasharray':'3,5'}));}
   svg.appendChild(el('rect',{x:FX,y:FY,width:FW,height:FH,rx:'3',fill:'none',stroke:'#3B6D11','stroke-width':'1.5'}));
 
-  // Corner text labels only (no dots)
+  // Corner labels
   svg.appendChild(el('text',{x:FX-4,y:FY+8,'text-anchor':'end',fill:'#27500A','font-size':'10','font-family':'sans-serif','font-weight':'bold'},'다'));
   svg.appendChild(el('text',{x:FX,y:bot+12,'text-anchor':'middle',fill:'#27500A','font-size':'10','font-family':'sans-serif','font-weight':'bold'},'가'));
   svg.appendChild(el('text',{x:rgt,y:bot+12,'text-anchor':'middle',fill:'#27500A','font-size':'10','font-family':'sans-serif','font-weight':'bold'},'나'));
 
-  // Dashed guides
+  // Dashed guides — B guide lighter if no B data
   svg.appendChild(el('line',{x1:axA,y1:bot,x2:axA,y2:FY,stroke:'#0F6E56','stroke-width':'1.1','stroke-dasharray':'4,3'}));
-  svg.appendChild(el('line',{x1:axB,y1:bot,x2:axB,y2:FY,stroke:'#27500A','stroke-width':'1.1','stroke-dasharray':'4,3'}));
+  svg.appendChild(el('line',{x1:axB,y1:bot,x2:axB,y2:FY,stroke:hasB?'#27500A':'#B4B2A9','stroke-width':'1.1','stroke-dasharray':'4,3',opacity:hasB?'1':'0.5'}));
 
-  // 가→A기점 dimension (no background rect)
+  // 가→A기점 dimension
   const d1y=bot+28, midA=(FX+axA)/2;
   svg.appendChild(el('line',{x1:FX,y1:d1y,x2:axA,y2:d1y,stroke:'#0F6E56','stroke-width':'1.2'}));
   svg.appendChild(el('polygon',{points:`${axA-4},${d1y-3} ${axA+1},${d1y} ${axA-4},${d1y+3}`,fill:'#0F6E56'}));
   svg.appendChild(el('polygon',{points:`${FX+4},${d1y-3} ${FX-1},${d1y} ${FX+4},${d1y+3}`,fill:'#0F6E56'}));
   svg.appendChild(el('text',{x:midA,y:d1y-3,'text-anchor':'middle',fill:'#085041','font-size':'8.5','font-family':'sans-serif','font-weight':'bold'},fmt(a_ga)+gaUnit));
 
-  // 가→B기점 dimension (no background rect)
+  // 가→B기점 dimension
   const d2y=bot+44, midB=(FX+axB)/2;
-  svg.appendChild(el('line',{x1:FX,y1:d2y,x2:axB,y2:d2y,stroke:'#27500A','stroke-width':'1.2'}));
-  svg.appendChild(el('polygon',{points:`${axB-4},${d2y-3} ${axB+1},${d2y} ${axB-4},${d2y+3}`,fill:'#27500A'}));
-  svg.appendChild(el('polygon',{points:`${FX+4},${d2y-3} ${FX-1},${d2y} ${FX+4},${d2y+3}`,fill:'#27500A'}));
-  svg.appendChild(el('text',{x:midB,y:d2y-3,'text-anchor':'middle',fill:'#173404','font-size':'8.5','font-family':'sans-serif','font-weight':'bold'},fmt(b_ga)+gaUnit));
+  svg.appendChild(el('line',{x1:FX,y1:d2y,x2:axB,y2:d2y,stroke:hasB?'#27500A':'#B4B2A9','stroke-width':'1.2',opacity:hasB?'1':'0.5'}));
+  svg.appendChild(el('polygon',{points:`${axB-4},${d2y-3} ${axB+1},${d2y} ${axB-4},${d2y+3}`,fill:hasB?'#27500A':'#B4B2A9',opacity:hasB?'1':'0.5'}));
+  svg.appendChild(el('polygon',{points:`${FX+4},${d2y-3} ${FX-1},${d2y} ${FX+4},${d2y+3}`,fill:hasB?'#27500A':'#B4B2A9',opacity:hasB?'1':'0.5'}));
+  svg.appendChild(el('text',{x:midB,y:d2y-3,'text-anchor':'middle',fill:hasB?'#173404':'#B4B2A9','font-size':'8.5','font-family':'sans-serif','font-weight':'bold'},fmt(b_ga)+gaUnit));
 
   // 세로 치수 A
   const vaX=FX-18, vaLy=(bot+ayA)/2;
@@ -505,37 +548,46 @@ function drawDiagram(ga,na,da,a_ga,b_ga,a_se,b_se,gaUnit){
   svg.appendChild(el('polygon',{points:`${vaX-3},${bot-5} ${vaX},${bot+1} ${vaX+3},${bot-5}`,fill:'#0F6E56'}));
   svg.appendChild(el('text',{x:vaX,y:vaLy+4,'text-anchor':'middle',fill:'#085041','font-size':'7.5','font-family':'sans-serif','font-weight':'bold',transform:`rotate(-90,${vaX},${vaLy})`},fmt(a_se)+'cm'));
 
-  // 세로 치수 B
-  const vbX=rgt+18, vbLy=(bot+ayB)/2;
-  svg.appendChild(el('line',{x1:vbX,y1:bot,x2:vbX,y2:ayB,stroke:'#27500A','stroke-width':'1'}));
-  svg.appendChild(el('polygon',{points:`${vbX-3},${ayB+5} ${vbX},${ayB-1} ${vbX+3},${ayB+5}`,fill:'#27500A'}));
-  svg.appendChild(el('polygon',{points:`${vbX-3},${bot-5} ${vbX},${bot+1} ${vbX+3},${bot-5}`,fill:'#27500A'}));
-  svg.appendChild(el('text',{x:vbX,y:vbLy+4,'text-anchor':'middle',fill:'#173404','font-size':'7.5','font-family':'sans-serif','font-weight':'bold',transform:`rotate(90,${vbX},${vbLy})`},fmt(b_se)+'cm'));
+  // 세로 치수 B (only if hasB)
+  if(hasB && b_se!=null){
+    const vbX=rgt+18, vbLy=(bot+ayB)/2;
+    svg.appendChild(el('line',{x1:vbX,y1:bot,x2:vbX,y2:ayB,stroke:'#27500A','stroke-width':'1'}));
+    svg.appendChild(el('polygon',{points:`${vbX-3},${ayB+5} ${vbX},${ayB-1} ${vbX+3},${ayB+5}`,fill:'#27500A'}));
+    svg.appendChild(el('polygon',{points:`${vbX-3},${bot-5} ${vbX},${bot+1} ${vbX+3},${bot-5}`,fill:'#27500A'}));
+    svg.appendChild(el('text',{x:vbX,y:vbLy+4,'text-anchor':'middle',fill:'#173404','font-size':'7.5','font-family':'sans-serif','font-weight':'bold',transform:`rotate(90,${vbX},${vbLy})`},fmt(b_se)+'cm'));
+  }
 
   // Tick marks
-  function tick(x,label,color){
-    svg.appendChild(el('line',{x1:x,y1:bot,x2:x,y2:bot+6,stroke:color,'stroke-width':'1.5'}));
-    svg.appendChild(el('text',{x:x,y:bot+14,'text-anchor':'middle',fill:color,'font-size':'8','font-family':'sans-serif','font-weight':'bold'},label));
+  function tick(x,label,color,ghost){
+    svg.appendChild(el('line',{x1:x,y1:bot,x2:x,y2:bot+6,stroke:color,'stroke-width':'1.5',opacity:ghost?'0.4':'1'}));
+    svg.appendChild(el('text',{x:x,y:bot+14,'text-anchor':'middle',fill:color,'font-size':'8','font-family':'sans-serif','font-weight':'bold',opacity:ghost?'0.4':'1'},label));
   }
-  tick(axA,'A기점','#0F6E56');
-  tick(axB,'B기점','#27500A');
+  tick(axA,'A기점','#0F6E56',false);
+  tick(axB,'B기점',hasB?'#27500A':'#B4B2A9',!hasB);
 
   // A포구 dot
   svg.appendChild(el('circle',{cx:axA,cy:ayA,r:'5',fill:'#0F6E56',opacity:'0.15'}));
   svg.appendChild(el('circle',{cx:axA,cy:ayA,r:'3.2',fill:'#0F6E56'}));
   svg.appendChild(el('text',{x:axA,y:ayA-9,'text-anchor':'middle',fill:'#085041','font-size':'9','font-family':'sans-serif','font-weight':'bold'},'A포구'));
 
-  // B포구 dot
-  svg.appendChild(el('circle',{cx:axB,cy:ayB,r:'5',fill:'#27500A',opacity:'0.15'}));
-  svg.appendChild(el('circle',{cx:axB,cy:ayB,r:'3.2',fill:'#27500A'}));
-  svg.appendChild(el('text',{x:axB,y:ayB-9,'text-anchor':'middle',fill:'#173404','font-size':'9','font-family':'sans-serif','font-weight':'bold'},'B포구'));
+  // B포구 dot — ghost if no B data
+  if(hasB){
+    svg.appendChild(el('circle',{cx:axB,cy:ayB,r:'5',fill:'#27500A',opacity:'0.15'}));
+    svg.appendChild(el('circle',{cx:axB,cy:ayB,r:'3.2',fill:'#27500A'}));
+    svg.appendChild(el('text',{x:axB,y:ayB-9,'text-anchor':'middle',fill:'#173404','font-size':'9','font-family':'sans-serif','font-weight':'bold'},'B포구'));
+  } else {
+    // ghost B marker at mid-height
+    svg.appendChild(el('circle',{cx:axB,cy:ayB,r:'5',fill:'#B4B2A9',opacity:'0.15'}));
+    svg.appendChild(el('circle',{cx:axB,cy:ayB,r:'3.2',fill:'#B4B2A9',opacity:'0.4'}));
+    svg.appendChild(el('text',{x:axB,y:ayB-9,'text-anchor':'middle',fill:'#B4B2A9','font-size':'8','font-family':'sans-serif'},hasB?'B포구':'B포구(미입력)'));
+  }
 
-  // Legend — 범례: A포구 / B포구
+  // Legend
   const lgX=FX+FW+30, lgY=FY+4;
   svg.appendChild(el('circle',{cx:lgX+4,cy:lgY+4,r:'3',fill:'#0F6E56'}));
   svg.appendChild(el('text',{x:lgX+11,y:lgY+8,fill:'#085041','font-size':'7.5','font-family':'sans-serif'},'A포구'));
-  svg.appendChild(el('circle',{cx:lgX+4,cy:lgY+17,r:'3',fill:'#27500A'}));
-  svg.appendChild(el('text',{x:lgX+11,y:lgY+21,fill:'#173404','font-size':'7.5','font-family':'sans-serif'},'B포구'));
+  svg.appendChild(el('circle',{cx:lgX+4,cy:lgY+17,r:'3',fill:hasB?'#27500A':'#B4B2A9'}));
+  svg.appendChild(el('text',{x:lgX+11,y:lgY+21,fill:hasB?'#173404':'#B4B2A9','font-size':'7.5','font-family':'sans-serif'},'B포구'));
 }
 
 // ── Screenshot ──
@@ -548,8 +600,10 @@ document.getElementById('btnCapture').addEventListener('click',function(){
   }
   const target=document.getElementById('captureTarget');
   const cropName=selectedCrop||'농작물';
+  const addr=(document.getElementById('address').value||'').replace(/\s+/g,'_').replace(/[\\/:*?"<>|]/g,'').slice(0,20);
   const dateStr=new Date().toLocaleDateString('ko-KR').replace(/\. /g,'-').replace('.','');
-  const fileName='기점계산결과_'+cropName+'_'+dateStr+'.png';
+  const addrPart=addr?'_'+addr:'';
+  const fileName=cropName+addrPart+'_'+dateStr+'.png';
 
   html2canvas(target,{
     scale:2, useCORS:true, allowTaint:true, logging:false,
