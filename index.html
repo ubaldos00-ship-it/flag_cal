@@ -96,7 +96,7 @@ input:focus{outline:none;border-color:var(--t600);background:#fff;box-shadow:0 0
 .btn-row{display:grid;grid-template-columns:1fr 2fr;gap:10px;}
 button.btn{padding:16px;border:none;border-radius:var(--rad);font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;transition:opacity .15s,transform .1s;}
 button.btn:active{transform:scale(.97);}
-.btn-reset{background:#E8E5DE;border:2px solid #8A8780;color:#3D3C39;}
+.btn-reset{background:#fff;border:2px solid #C0392B;color:#C0392B;border-radius:50px;font-size:15px;display:flex;align-items:center;justify-content:center;gap:6px;}
 .btn-calc{background:var(--g800);color:#fff;font-size:17px;}
 
 /* ── Alert ── */
@@ -137,14 +137,14 @@ input[type=date]{font-size:15px;font-weight:500;color:#2A2A28;background:#fff;pa
 </head>
 <body>
 
-<div style="max-width:500px;margin:0 auto 8px;">
-  <a href="https://ubaldos00-ship-it.github.io/home/" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:var(--g800);color:var(--g100);font-size:12px;font-weight:700;border-radius:100px;text-decoration:none;font-family:inherit;transition:opacity .15s;" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
-    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 9.5L10 3l7 6.5V17a1 1 0 01-1 1H13v-5H7v5H4a1 1 0 01-1-1V9.5z" fill="#C0DD97" stroke="#C0DD97" stroke-width="0.5"/></svg>
-    홈으로
+<div class="suite-row">
+  <span class="suite-tag">농작물생산조사</span>
+  <span class="suite-line"></span>
+  <a href="https://ubaldos00-ship-it.github.io/home/" style="display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:var(--g800);color:var(--g100);font-size:11px;font-weight:700;border-radius:100px;text-decoration:none;font-family:inherit;white-space:nowrap;flex-shrink:0;transition:opacity .15s;" onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
+    <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 9.5L10 3l7 6.5V17a1 1 0 01-1 1H13v-5H7v5H4a1 1 0 01-1-1V9.5z" fill="#C0DD97" stroke="#C0DD97" stroke-width="0.5"/></svg>
+    홈
   </a>
 </div>
-
-<div class="suite-row">
   <span class="suite-tag">농작물생산조사</span>
   <span class="suite-line"></span>
 </div>
@@ -355,7 +355,10 @@ input[type=date]{font-size:15px;font-weight:500;color:#2A2A28;background:#fff;pa
   <div id="alertBox" class="alert">⚠ 가로 기점이 0입니다 — 2번 비율을 사용하세요</div>
 
   <div class="btn-row">
-    <button class="btn btn-reset" onclick="location.reload()">초기화</button>
+    <button class="btn btn-reset" onclick="location.reload()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12a8 8 0 018-8 8 8 0 016.93 4H16v2h6V2h-2v2.54A9.99 9.99 0 0012 2C6.48 2 2 6.48 2 12h2z" fill="#C0392B"/><path d="M20 12a8 8 0 01-8 8 8 8 0 01-6.93-4H8v-2H2v6h2v-2.54A9.99 9.99 0 0012 22c5.52 0 10-4.48 10-10h-2z" fill="#C0392B"/></svg>
+      초기화
+    </button>
     <button class="btn btn-calc"  onclick="calculate()">계산하기</button>
   </div>
 
