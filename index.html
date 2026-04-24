@@ -42,6 +42,10 @@ body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:var(--gr50);
 .fg:last-child{margin-bottom:0;}
 label{display:block;font-size:12px;font-weight:500;color:var(--gr600);margin-bottom:4px;}
 input[type=text],input[type=number],input[type=date]{width:100%;padding:10px 12px;border:.5px solid var(--gr100);border-radius:var(--rad);font-size:14px;font-family:inherit;background:var(--gr50);color:var(--gr800);transition:border-color .15s,background .15s;-webkit-appearance:none;appearance:none;}
+/* 숫자 스피너 제거 */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
+input[type=number]{-moz-appearance:textfield;}
 input:focus{outline:none;border-color:var(--t600);background:#fff;box-shadow:0 0 0 3px rgba(15,110,86,.1);}
 .hint{font-size:11px;color:var(--gr600);margin-top:4px;}
 .hint-v{font-weight:700;color:var(--t600);}
@@ -295,19 +299,19 @@ button.btn:active{transform:scale(.97);}
     </div>
     <div class="fg">
       <label id="lenLabel">가-나 총길이 (cm)</label>
-      <input type="number" inputmode="decimal" id="lenGaNa" oninput="updateHalf()" placeholder="숫자 입력">
+      <input type="text" inputmode="decimal" id="lenGaNa" oninput="updateHalf()" placeholder="숫자 입력">
       <div class="hint">추출간격 ÷ 2 = <span class="hint-v" id="halfVal">0</span> <span id="halfUnit">cm</span></div>
     </div>
     <div class="ab-grid">
       <div class="ab-group a-grp">
         <div class="ab-label a-lbl"><span class="ab-badge a">A</span>A 포구</div>
-        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" inputmode="decimal" id="heightA" placeholder="A 세로"></div>
-        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" inputmode="decimal" id="waAvg" placeholder="평균값"></div>
+        <div class="fg"><label>세로 총길이 (cm)</label><input type="text" inputmode="decimal" id="heightA" placeholder="A 세로"></div>
+        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="text" inputmode="decimal" id="waAvg" placeholder="평균값"></div>
       </div>
       <div class="ab-group b-grp">
         <div class="ab-label b-lbl"><span class="ab-badge b">B</span>B 포구</div>
-        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" inputmode="decimal" id="heightB" placeholder="B 세로"></div>
-        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" inputmode="decimal" id="wbAvg" placeholder="평균값"></div>
+        <div class="fg"><label>세로 총길이 (cm)</label><input type="text" inputmode="decimal" id="heightB" placeholder="B 세로"></div>
+        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="text" inputmode="decimal" id="wbAvg" placeholder="평균값"></div>
       </div>
     </div>
   </div>
