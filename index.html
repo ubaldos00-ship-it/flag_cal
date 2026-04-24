@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>농작물생산조사 기점 계산기</title>
+<title>농작물생산조사 포구 기점 계산기</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 :root{
@@ -119,7 +119,7 @@ button.btn:active{transform:scale(.97);}
 
   <div class="hdr">
     <div class="hdr-sub">농작물생산조사</div>
-    <div class="hdr-ttl">기점 계산기 <span class="hdr-crop-badge" id="hdrCropBadge"></span></div>
+    <div class="hdr-ttl">포구 기점 계산기 <span class="hdr-crop-badge" id="hdrCropBadge"></span></div>
     <span class="hdr-ico">🌾</span>
   </div>
 
@@ -275,15 +275,15 @@ button.btn:active{transform:scale(.97);}
       <div class="rtog-btn"        id="tog2" onclick="selectRatio(2)">② 2번 비율</div>
     </div>
     <div class="ratio-row active" id="rrow1">
-      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="decimal" id="r1_ga" value="0."></div>
-      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="decimal" id="r1_na" value="0."></div>
-      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="decimal" id="r1_da" value="0."></div>
+      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r1_ga" value="0."></div>
+      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r1_na" value="0."></div>
+      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r1_da" value="0."></div>
     </div>
     <div style="height:8px;"></div>
     <div class="ratio-row" id="rrow2">
-      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="decimal" id="r2_ga" value="0."></div>
-      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="decimal" id="r2_na" value="0."></div>
-      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="decimal" id="r2_da" value="0."></div>
+      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r2_ga" value="0."></div>
+      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r2_na" value="0."></div>
+      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r2_da" value="0."></div>
     </div>
   </div>
 
@@ -299,19 +299,19 @@ button.btn:active{transform:scale(.97);}
     </div>
     <div class="fg">
       <label id="lenLabel">가-나 총길이 (cm)</label>
-      <input type="text" inputmode="decimal" id="lenGaNa" oninput="updateHalf()" placeholder="숫자 입력">
+      <input type="number" inputmode="numeric" pattern="[0-9]*" id="lenGaNa" oninput="updateHalf()" placeholder="숫자 입력">
       <div class="hint">추출간격 ÷ 2 = <span class="hint-v" id="halfVal">0</span> <span id="halfUnit">cm</span></div>
     </div>
     <div class="ab-grid">
       <div class="ab-group a-grp">
         <div class="ab-label a-lbl"><span class="ab-badge a">A</span>A 포구</div>
-        <div class="fg"><label>세로 총길이 (cm)</label><input type="text" inputmode="decimal" id="heightA" placeholder="A 세로"></div>
-        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="text" inputmode="decimal" id="waAvg" placeholder="평균값"></div>
+        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" inputmode="decimal" id="heightA" placeholder="A 세로"></div>
+        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" inputmode="decimal" id="waAvg" placeholder="평균값"></div>
       </div>
       <div class="ab-group b-grp">
         <div class="ab-label b-lbl"><span class="ab-badge b">B</span>B 포구</div>
-        <div class="fg"><label>세로 총길이 (cm)</label><input type="text" inputmode="decimal" id="heightB" placeholder="B 세로"></div>
-        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="text" inputmode="decimal" id="wbAvg" placeholder="평균값"></div>
+        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" inputmode="decimal" id="heightB" placeholder="B 세로"></div>
+        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" inputmode="decimal" id="wbAvg" placeholder="평균값"></div>
       </div>
     </div>
   </div>
