@@ -84,10 +84,10 @@ input:focus{outline:none;border-color:var(--t600);background:#fff;box-shadow:0 0
 
 /* ── Ratio toggle ── */
 .ratio-toggle{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
-.rtog-btn{padding:10px;border:1.5px solid var(--gr100);border-radius:var(--rad);background:#F8F6F1;font-size:13px;font-weight:600;color:#3D3C39;cursor:pointer;text-align:center;transition:all .15s;font-family:inherit;}
-.rtog-btn.active{background:var(--t600);border-color:var(--t600);color:#fff;}
-.ratio-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:11px;border:1.5px solid var(--gr100);border-radius:var(--rad);background:#F8F6F1;transition:all .2s;}
-.ratio-row.active{border-color:var(--t400);background:#fff;box-shadow:0 0 0 3px rgba(15,110,86,.1);}
+.rtog-btn{padding:11px;border:2px solid var(--gr100);border-radius:var(--rad);background:#F0EDE6;font-size:14px;font-weight:700;color:#888580;cursor:pointer;text-align:center;transition:all .2s;font-family:inherit;}
+.rtog-btn.active{background:var(--g800);border-color:var(--g800);color:#fff;font-size:15px;box-shadow:0 3px 10px rgba(39,80,10,.35);}
+.ratio-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:11px;border:2px solid var(--gr100);border-radius:var(--rad);background:#F0EDE6;transition:all .2s;opacity:0.45;}
+.ratio-row.active{border-color:var(--g600);background:#fff;box-shadow:0 0 0 3px rgba(59,109,17,.18);opacity:1;}
 .rc{display:flex;flex-direction:column;gap:4px;text-align:center;}
 .rc-lbl{font-size:11px;color:#3D3C39;font-weight:600;}
 .rc input{text-align:center;padding:10px 4px;font-size:16px;font-weight:700;}
@@ -96,7 +96,7 @@ input:focus{outline:none;border-color:var(--t600);background:#fff;box-shadow:0 0
 .btn-row{display:grid;grid-template-columns:1fr 2fr;gap:10px;}
 button.btn{padding:16px;border:none;border-radius:var(--rad);font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;transition:opacity .15s,transform .1s;}
 button.btn:active{transform:scale(.97);}
-.btn-reset{background:#E8E5DE;border:1.5px solid var(--gr100);color:#3D3C39;}
+.btn-reset{background:#E8E5DE;border:2px solid #8A8780;color:#3D3C39;}
 .btn-calc{background:var(--g800);color:#fff;font-size:17px;}
 
 /* ── Alert ── */
@@ -131,9 +131,18 @@ button.btn:active{transform:scale(.97);}
 /* ── Capture button ── */
 .btn-capture{width:100%;padding:15px;background:#fff;border:1.5px solid var(--gr100);border-radius:var(--rad);font-size:14px;font-weight:700;font-family:inherit;color:var(--g800);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .15s;}
 .btn-capture:hover{background:var(--g50);}
+/* 날짜 입력란 별도 스타일 */
+input[type=date]{font-size:15px;font-weight:500;color:#2A2A28;background:#fff;padding:11px 10px;}
 </style>
 </head>
 <body>
+
+<div style="max-width:500px;margin:0 auto 8px;">
+  <a href="https://ubaldos00-ship-it.github.io/home/" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:var(--g800);color:var(--g100);font-size:12px;font-weight:700;border-radius:100px;text-decoration:none;font-family:inherit;transition:opacity .15s;" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 9.5L10 3l7 6.5V17a1 1 0 01-1 1H13v-5H7v5H4a1 1 0 01-1-1V9.5z" fill="#C0DD97" stroke="#C0DD97" stroke-width="0.5"/></svg>
+    홈으로
+  </a>
+</div>
 
 <div class="suite-row">
   <span class="suite-tag">농작물생산조사</span>
@@ -282,13 +291,15 @@ button.btn:active{transform:scale(.97);}
 
       </div>
     </div>
-    <div class="fg">
-      <label>필지 주소</label>
-      <input type="text" id="address" placeholder="필지 주소 입력">
-    </div>
-    <div class="fg">
-      <label>조사 날짜</label>
-      <input type="date" id="surveyDate">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;margin-top:4px;">
+      <div class="fg" style="margin-bottom:0;">
+        <label>필지 주소</label>
+        <input type="text" id="address" placeholder="필지 주소 입력">
+      </div>
+      <div class="fg" style="margin-bottom:0;">
+        <label>조사 날짜</label>
+        <input type="date" id="surveyDate" style="width:auto;min-width:128px;">
+      </div>
     </div>
   </div>
 
@@ -300,15 +311,15 @@ button.btn:active{transform:scale(.97);}
       <div class="rtog-btn"        id="tog2" onclick="selectRatio(2)">② 2번 비율</div>
     </div>
     <div class="ratio-row active" id="rrow1">
-      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r1_ga" value="0."></div>
-      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r1_na" value="0."></div>
-      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r1_da" value="0."></div>
+      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r1_ga" value="0."></div>
+      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r1_na" value="0."></div>
+      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r1_da" value="0."></div>
     </div>
     <div style="height:8px;"></div>
     <div class="ratio-row" id="rrow2">
-      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r2_ga" value="0."></div>
-      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r2_na" value="0."></div>
-      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r2_da" value="0."></div>
+      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r2_ga" value="0."></div>
+      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r2_na" value="0."></div>
+      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r2_da" value="0."></div>
     </div>
   </div>
 
@@ -401,10 +412,78 @@ button.btn:active{transform:scale(.97);}
 <script>
 let selectedRatio=1, measureMode='길이', selectedCrop='';
 
+// ── 날짜: 대한민국 표준시(KST, UTC+9) 오늘 날짜 ──
 (function(){
-  const t=new Date();
-  document.getElementById('surveyDate').value=
-    t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+  const kst = new Date(Date.now() + 9 * 60 * 60 * 1000);
+  document.getElementById('surveyDate').value = kst.toISOString().slice(0, 10);
+})();
+
+// ── 비율 입력 보호: "0." 고정 + 소수 둘째자리 제한 (PC·모바일 호환) ──
+(function(){
+  // 탭 순서: 1번 세트 가→나→다 → 2번 세트 가→나→다 → 총길이
+  const ratioIds = ['r1_ga','r1_na','r1_da','r2_ga','r2_na','r2_da'];
+  const nextMap  = {
+    r1_ga:'r1_na', r1_na:'r1_da', r1_da:'r2_ga',
+    r2_ga:'r2_na', r2_na:'r2_da', r2_da:'lenGaNa'
+  };
+
+  function enforce(inp){
+    const v = inp.value;
+    const decPart = v.startsWith('0.') ? v.slice(2) : v.replace(/[^0-9]/g,'');
+    const digits  = decPart.replace(/[^0-9]/g,'').slice(0, 2);
+    inp.value = '0.' + digits;
+  }
+  function toEnd(inp){
+    const pos = inp.value.length;
+    try{ inp.setSelectionRange(pos, pos); }catch(e){}
+  }
+  function advance(id){
+    const nextId = nextMap[id];
+    if(!nextId) return;
+    const next = document.getElementById(nextId);
+    if(next){ next.focus(); toEnd(next); }
+  }
+
+  ratioIds.forEach(function(id){
+    const inp = document.getElementById(id);
+
+    // 입력 시 (붙여넣기·모바일 가상키보드 포함)
+    inp.addEventListener('input', function(){
+      enforce(this);
+      toEnd(this);
+      // 소수 둘째자리까지 채워지면 다음 필드로 자동 이동
+      if(this.value.slice(2).replace(/[^0-9]/g,'').length >= 2){
+        setTimeout(()=>advance(id), 80);
+      }
+    });
+
+    // PC 키보드 제어
+    inp.addEventListener('keydown', function(e){
+      const sel  = this.selectionStart ?? this.value.length;
+      const selE = this.selectionEnd   ?? this.value.length;
+      if(e.key==='Backspace'){ if(sel<=2 && sel===selE){ e.preventDefault(); return; } if(sel<2){ e.preventDefault(); return; } }
+      if(e.key==='Delete')   { if(sel<2){ e.preventDefault(); return; } }
+      const ctrl=['Backspace','Delete','ArrowLeft','ArrowRight','Tab','Home','End'];
+      if(!ctrl.includes(e.key) && !/^[0-9]$/.test(e.key)){ e.preventDefault(); return; }
+      if(/^[0-9]$/.test(e.key)){
+        const dec=this.value.slice(2).replace(/[^0-9]/g,'');
+        if(dec.length>=2 && sel>=2 && sel===selE){ e.preventDefault(); return; }
+      }
+    });
+
+    // 포커스 시 커서를 입력값 끝으로
+    inp.addEventListener('focus', function(){
+      const pos = this.value.length;
+      setTimeout(()=>{ try{ this.setSelectionRange(pos,pos); }catch(e){} }, 10);
+    });
+    inp.addEventListener('click', function(){
+      if((this.selectionStart??0)<2){
+        const pos=this.value.length;
+        try{ this.setSelectionRange(pos,pos); }catch(e){}
+      }
+    });
+    inp.addEventListener('blur', function(){ if(!this.value||this.value==='0') this.value='0.'; });
+  });
 })();
 
 function selectCrop(btn){
