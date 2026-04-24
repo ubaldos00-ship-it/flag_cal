@@ -275,15 +275,15 @@ button.btn:active{transform:scale(.97);}
       <div class="rtog-btn"        id="tog2" onclick="selectRatio(2)">② 2번 비율</div>
     </div>
     <div class="ratio-row active" id="rrow1">
-      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r1_ga" value="0."></div>
-      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r1_na" value="0."></div>
-      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r1_da" value="0."></div>
+      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r1_ga" value="0."></div>
+      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r1_na" value="0."></div>
+      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r1_da" value="0."></div>
     </div>
     <div style="height:8px;"></div>
     <div class="ratio-row" id="rrow2">
-      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r2_ga" value="0."></div>
-      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r2_na" value="0."></div>
-      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="decimal" pattern="[0-9.]*" id="r2_da" value="0."></div>
+      <div class="rc"><span class="rc-lbl">가 (가로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r2_ga" value="0."></div>
+      <div class="rc"><span class="rc-lbl">나 (A세로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r2_na" value="0."></div>
+      <div class="rc"><span class="rc-lbl">다 (B세로)</span><input type="text" inputmode="numeric" pattern="[0-9.]*" id="r2_da" value="0."></div>
     </div>
   </div>
 
@@ -305,13 +305,13 @@ button.btn:active{transform:scale(.97);}
     <div class="ab-grid">
       <div class="ab-group a-grp">
         <div class="ab-label a-lbl"><span class="ab-badge a">A</span>A 포구</div>
-        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" inputmode="decimal" id="heightA" placeholder="A 세로"></div>
-        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" inputmode="decimal" id="waAvg" placeholder="평균값"></div>
+        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" inputmode="numeric" pattern="[0-9.]*" step="any" id="heightA" placeholder="A 세로"></div>
+        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" inputmode="numeric" pattern="[0-9.]*" step="any" id="waAvg" placeholder="평균값"></div>
       </div>
       <div class="ab-group b-grp">
         <div class="ab-label b-lbl"><span class="ab-badge b">B</span>B 포구</div>
-        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" inputmode="decimal" id="heightB" placeholder="B 세로"></div>
-        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" inputmode="decimal" id="wbAvg" placeholder="평균값"></div>
+        <div class="fg"><label>세로 총길이 (cm)</label><input type="number" inputmode="numeric" pattern="[0-9.]*" step="any" id="heightB" placeholder="B 세로"></div>
+        <div class="fg" style="margin-bottom:0;"><label>이랑 평균너비 10개 (cm)</label><input type="number" inputmode="numeric" pattern="[0-9.]*" step="any" id="wbAvg" placeholder="평균값"></div>
       </div>
     </div>
   </div>
